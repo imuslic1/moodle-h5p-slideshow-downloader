@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swo
+*.swp
+
+# Local output and course materials
+ETF_Predavanja/
+Moodle_Slides/
+slides_output/
+*.pdf
+slide_*.jpg
+slide_*.jpeg
+slide_*.png
+slide_*.webp
+
+# Local configuration / secrets
+.env
+.env.*
+!.env.example
+
+# Playwright browser profiles / state
+playwright/.cache/
+browser-data/
+storage_state.json
