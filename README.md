@@ -313,7 +313,3 @@ Do **not** commit:
 - PDFs, slide images, OCR transcripts, or other course materials;
 - browser profiles, session data, cookies, passwords, or access tokens;
 - Python cache files such as `__pycache__/`.
-
-## License
-
-No license is included by default. Choose a license that matches how you want others to use the code before making the repository public. A license for the downloader code does not grant permission to redistribute lecture materials downloaded from Moodle.
