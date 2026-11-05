@@ -1,12 +1,19 @@
-
 import re
-import time
+import pytesseract
+import fitz
+
 from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlparse
 
 from PIL import Image
 from playwright.sync_api import sync_playwright
+
+# Optional: specify the Tesseract executable manually.
+# Uncomment if Tesseract is not available through PATH.
+pytesseract.pytesseract.tesseract_cmd = (
+    r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+)
 
 COURSE_URL = "https://c2.etf.unsa.ba/course/view.php?id=220"
 OUTPUT = Path("ETF_Predavanja")

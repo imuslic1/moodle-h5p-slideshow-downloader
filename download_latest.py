@@ -1,4 +1,3 @@
-
 import re
 import pytesseract
 import fitz
