@@ -101,7 +101,92 @@ playwright install chromium
 
 Tesseract is a separate system application; installing `pytesseract` with pip is not enough.
 
-Install Tesseract for your operating system and make sure its executable is on your `PATH`. On Windows, the executable is commonly located at:
+#### Installing Tesseract OCR
+Tesseract must be installed separately from the Python
+dependencies.
+
+Choose the installation method for your operating system:
+
+### Windows
+
+The recommended method is the UB Mannheim installer or Windows Package Manager.
+
+**Option 1 — Windows Package Manager (winget):**
+
+```powershell
+winget install UB-Mannheim.TesseractOCR
+```
+
+**Option 2 — Manual installation:**
+
+1. Download the latest installer from the
+   [UB Mannheim Tesseract builds](https://github.com/UB-Mannheim/tesseract/wiki).
+2. Run the installer and select the language data you need.
+3. Add the installation directory to your system PATH:
+
+   ```text
+   C:\Program Files\Tesseract-OCR
+   ```
+
+4. Restart your terminal.
+
+### macOS
+
+Install using [Homebrew](https://brew.sh/):
+
+```bash
+brew install tesseract
+brew install tesseract-lang
+```
+
+The second command installs additional language data.
+
+### Ubuntu / Debian
+
+```bash
+sudo apt update
+sudo apt install tesseract-ocr
+```
+
+To install all available language packages:
+
+```bash
+sudo apt install tesseract-ocr-all
+```
+
+### Fedora
+
+```bash
+sudo dnf install tesseract tesseract-langpack-eng
+```
+
+### Arch Linux / Manjaro
+
+```bash
+sudo pacman -S tesseract tesseract-data-eng
+```
+
+### Conda (cross-platform alternative)
+
+If you are using Conda:
+
+```bash
+conda install -c conda-forge tesseract
+```
+
+### Verifying the installation
+
+After installation, open a terminal and execute:
+
+```bash
+tesseract --version
+tesseract --list-langs
+```
+
+The first command should display the installed Tesseract version.
+The second lists the available OCR languages.
+
+After installing Tesseract for your operating system, make sure its executable is on your `PATH`. On Windows, the executable is commonly located at:
 
 ```text
 C:\Program Files\Tesseract-OCR\tesseract.exe
@@ -111,7 +196,7 @@ If it is not on `PATH`, set the path near the top of both scripts:
 
 ```python
 pytesseract.pytesseract.tesseract_cmd = (
-    r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
 )
 ```
 
